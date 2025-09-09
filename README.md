@@ -1,3 +1,3 @@
-# esto es un ejemplo de redme
+# Tarea para el lunes 16/09/2025
 
-## esto es un parrafo
+## individual
