@@ -1,3 +1,4 @@
-# Tarea para el lunes 16/09/2025
-
-## individual
+Explicar que hace cada linea
+como abrirlo en Visual
+como funciona
+porque puede salir error
