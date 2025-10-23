@@ -1,5 +1,6 @@
 Tenemos la carpeta llamada Bank despues de descomprimir, luego le damos en VSC abrir carpeta para cargar todos los archivos del codigo.
-<img width="1357" height="768" alt="image" src="https://github.com/user-attachments/assets/91d51601-f340-44fb-9a93-baeba5634d9d" />
+<img width="1115" height="609" alt="image" src="https://github.com/user-attachments/assets/63cd4340-da4e-4005-b108-b005e48e462e" />
+
 
 Estructura del proyecto BANK
 
@@ -53,6 +54,47 @@ En repository están FileManager y JsonRepository, encargadas de guardar y leer 
 El paquete service contiene la lógica del negocio con las clases BankService y BankServiceImpl, y dentro de strategies se encuentran SimpleRateStrategy y TieredRateStrategy, que definen diferentes formas de calcular tasas o intereses.
 
 <img width="299" height="526" alt="image" src="https://github.com/user-attachments/assets/29d01f3c-b5e1-4bb1-a3ce-c1d5a828eca0" />
+
+Ejecución del proyecto y uso de Thunder Client
+
+En esta parte se muestra el proyecto ejecutándose en Spring Boot, como se ve en la terminal con el logo de Spring.
+En la parte superior se usa la extensión Thunder Client, una herramienta dentro de VS Code que permite hacer pruebas a las rutas o servicios del proyecto, similar a Postman.
+Aquí se pueden enviar peticiones GET, POST, PUT o DELETE para comprobar que las funciones del sistema respondan correctamente.
+
+<img width="1346" height="712" alt="image" src="https://github.com/user-attachments/assets/4c4939e2-4f3e-48c9-800a-49c1deb5a134" />
+
+el sistema se inicia en un servidor local (localhost:8080)
+<img width="1003" height="312" alt="image" src="https://github.com/user-attachments/assets/43c75d74-d522-427e-9039-09ccc39450a6" />
+
+Cuando realizamos la busqueda en en el navegador nos arroja el siguiente error. Esto significa que Spring Boot está corriendo correctamente, pero no encontró ningún endpoint mapeado en la ruta
+
+<img width="1129" height="607" alt="image" src="https://github.com/user-attachments/assets/cffb591f-d9f1-4a5e-b13b-fc37b5c157a2" />
+
+
+Cuando realizamos el cambio de busqueda, solicitando una busqueda especifica como:
+http://localhost:8080/api/bank/customers se obtiene ya la informacion incial solo que aun no tenemos datos ingresados
+
+<img width="444" height="201" alt="image" src="https://github.com/user-attachments/assets/cd9fd9ea-9f38-45aa-aadc-91f6ff0219f2" />
+
+
+Para el ingreso de datos descargamos la extención Thunder Client utilizando GET, POST, PUT o DELETE 
+
+Paso a paso para agregar un cliente en mi aplicación bancaria
+Abrí Thunder Client desde Visual Studio Code para probar mi API.
+En la barra de dirección seleccioné el método POST y escribí la ruta:http://localhost:8080/api/bank/customers
+Luego, entré a la pestaña Body.
+Marqué la opción raw y seleccioné el formato JSON.
+En el cuadro de texto escribí los datos del cliente en formato JSON.
+Presioné el botón Send para enviar la solicitud al servidor.
+En la parte derecha (sección de Response) me apareció el código 201 Created, indicando que el cliente fue registrado correctamente.
+Finalmente, confirmé que los datos se guardaron al hacer una petición GET a: http://localhost:8080/api/bank/customers
+
+<img width="1009" height="699" alt="image" src="https://github.com/user-attachments/assets/6ca32497-c11b-4aa1-aff6-edc88ff551dc" />
+
+
+luego despues de recargar la url nos sale la informacion ingresada 
+
+<img width="1361" height="768" alt="image" src="https://github.com/user-attachments/assets/cb9d286b-49f7-4a75-b82b-1a5f961493b3" />
 
 
 
