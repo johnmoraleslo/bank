@@ -153,13 +153,84 @@ como se mensiono anteriormente en esta parte podemos ingresar un cliente por med
 <img width="1336" height="763" alt="image" src="https://github.com/user-attachments/assets/fc1ef6c3-a01a-4d7b-b803-7b80b68d8efa" />
 
 
-Transferencia a cuentas
+🟦 1. GET /api/banco/clientes
+
+En esta parte puedo consultar la lista de todos los clientes registrados en el banco.
+Cuando ejecuto esta solicitud, el sistema me devuelve un listado con los datos de cada cliente, como su nombre, número de identificación y las cuentas que posee.
+Este endpoint me sirve principalmente para ver la información general del banco y asegurarme de que los registros de clientes se estén guardando correctamente.
+
+🟩 2. POST /api/banco/clientes
+
+Aquí tengo la opción de crear un nuevo cliente dentro del sistema.
+Swagger me permite ingresar los datos del cliente en formato JSON, como su nombre, dirección o número de identificación, y luego presiono “Execute” para enviar la información.
+Si todo está correcto, la API responde con un mensaje confirmando que el cliente fue creado exitosamente.
+Este endpoint es útil cuando necesito registrar un nuevo usuario en el banco.
+
+🟦 3. GET /api/banco/clientes/{customerId}/cuentas
+
+Este endpoint me permite ver todas las cuentas asociadas a un cliente específico.
+Solo tengo que escribir el customerId (por ejemplo, “C001”) y al ejecutar la consulta, el sistema me muestra todas las cuentas que pertenecen a ese cliente, junto con su tipo (ahorros, corriente, etc.) y su saldo actual.
+Lo uso para consultar la información financiera de un cliente en particular.
+
+🟩 4. POST /api/banco/clientes/{customerId}/cuentas
+
+Con este método puedo crear una nueva cuenta para un cliente ya existente.
+Debo ingresar el customerId y en el cuerpo del JSON puedo especificar detalles como el tipo de cuenta y el saldo inicial.
+Al ejecutar, la API registra la nueva cuenta en el sistema y la asocia automáticamente al cliente correspondiente.
+
+🟩 5. POST /api/banco/cuentas/{fromAccountId}/transferencia
+
+Este es el endpoint que permite realizar una transferencia entre cuentas.
+Ingreso el número de la cuenta de origen (fromAccountId) y en el cuerpo de la solicitud indico la cuenta de destino (toAccountId) junto con el monto que deseo transferir.
+Al ejecutar, el sistema verifica los datos y realiza el movimiento de dinero, mostrando una respuesta con el resultado de la operación.
 <img width="1303" height="730" alt="image" src="https://github.com/user-attachments/assets/4c03aa63-b092-4360-a4dd-6763bf4513b6" />
 
+🟩 6. POST /api/banco/cuentas/{accountId}/retirar
+
+En este endpoint puedo realizar un retiro de dinero desde una cuenta específica.
+Indico el accountId y el monto que deseo retirar en el cuerpo del JSON.
+Cuando ejecuto la solicitud, el sistema descuenta el dinero de la cuenta y me devuelve un mensaje con el nuevo saldo.
+Lo uso para probar que el sistema de retiros funcione correctamente y actualice los saldos.
+<img width="1351" height="767" alt="image" src="https://github.com/user-attachments/assets/988d1d23-3d15-4c26-b8a3-4ab47c653c29" />
 
 
+🟩 7. POST /api/banco/cuentas/{accountId}/depósito
+
+Esta opción sirve para hacer un depósito en una cuenta determinada.
+Solo ingreso el accountId y el monto que quiero depositar.
+Después de ejecutar la operación, el sistema aumenta el saldo de esa cuenta y me muestra la confirmación con el valor actualizado.
+Este endpoint me permite comprobar que los depósitos se registren correctamente en la base de datos.
+<img width="1341" height="766" alt="image" src="https://github.com/user-attachments/assets/6f5fb098-e52e-4d25-8d50-6af8aa8b62f3" />
 
 
+🟩 8. POST /api/banco/cuentas/{accountId}/aplicar-interés
+
+Aquí puedo aplicar intereses a una cuenta, generalmente de tipo ahorro.
+Ingreso el accountId y, si la cuenta es válida, el sistema calcula el interés según la tasa configurada y actualiza el saldo automáticamente.
+Este endpoint es muy útil para simular el crecimiento del dinero con intereses dentro del sistema bancario.
+<img width="1096" height="541" alt="image" src="https://github.com/user-attachments/assets/f5f811ef-356b-4f42-b5f4-ecb37d3ded25" />
+
+🟦 9. GET /api/banco/clientes/{customerId}
+
+Este endpoint me permite consultar los datos de un cliente en específico.
+Escribo el identificador del cliente (customerId) y ejecuto la solicitud.
+El sistema me devuelve toda la información relacionada con ese cliente: nombre, dirección, cuentas y otros detalles relevantes.
+Lo utilizo cuando necesito verificar información individual de un cliente.
+
+🟦 10. GET /api/banco/cuentas/{accountId}
+
+Aquí puedo ver la información completa de una cuenta.
+Al ingresar el accountId, el sistema me muestra el número de cuenta, tipo, saldo actual y estado.
+Este endpoint es muy útil para comprobar si las operaciones de depósito o retiro se reflejan correctamente en el saldo.
+
+🟦 11. GET /api/banco/cuentas/{accountId}/transacciones
+
+Este endpoint me permite consultar todas las transacciones realizadas en una cuenta.
+Al indicar el accountId, puedo ver un historial detallado con cada movimiento: depósitos, retiros, transferencias, y fechas.
+Esta función es esencial para auditar o verificar los movimientos financieros de una cuenta.
+
+
+Profe tuve muchos problemas con la ejecucion del codigo pero investigando y leyendo cada proceso aprendi  bastante sobre el funcionamiento del controlador 
 
 
 
