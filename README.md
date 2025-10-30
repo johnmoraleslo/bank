@@ -122,6 +122,21 @@ Esto me ayudó a verificar que todas las operaciones respondieran correctamente 
 *Con este proyecto logré entender cómo funciona una aplicación Spring Boot completa, desde el controlador hasta la persistencia de datos.
 La estructura modular me permitió mantener el código limpio y aplicar principios de programación orientada a objetos*
 
+** Segunda entrega del proyecto Bank con ejecuciones**
+
+Controlador de nuestra app esta formada por:
+<img width="1317" height="665" alt="image" src="https://github.com/user-attachments/assets/310080ad-ae60-48c8-ab4d-79787097da1a" />
+
+
+como se mensiono anteriormente en esta parte podemos ingresar un cliente por medio de POST y tambien podemos traer informacion o buscar con GET
+<img width="1327" height="596" alt="image" src="https://github.com/user-attachments/assets/14658b42-c774-477b-9203-0a6a08bce3b0" />
+<img width="1336" height="763" alt="image" src="https://github.com/user-attachments/assets/fc1ef6c3-a01a-4d7b-b803-7b80b68d8efa" />
+
+
+Transferencia a cuentas
+<img width="1303" height="730" alt="image" src="https://github.com/user-attachments/assets/4c03aa63-b092-4360-a4dd-6763bf4513b6" />
+
+
 
 
 
