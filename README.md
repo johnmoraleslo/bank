@@ -126,7 +126,27 @@ La estructura modular me permitió mantener el código limpio y aplicar principi
 
 Controlador de nuestra app esta formada por:
 <img width="1317" height="665" alt="image" src="https://github.com/user-attachments/assets/310080ad-ae60-48c8-ab4d-79787097da1a" />
+🧭 Qué es Swagger / OpenAPI
+Swagger (ahora llamado OpenAPI UI) es una interfaz visual que permite:
+Ver todos los endpoints de una API.
+Conocer qué método HTTP (GET, POST, etc.) usa cada uno.
+Probar directamente las solicitudes (enviar parámetros, ver respuestas, errores, etc.).
 
+📚 Descripción de los métodos del controlador bancario
+Método	Endpoint	Descripción	Tipo de operación
+GET	/api/banco/clientes	Obtiene la lista de todos los clientes del banco.	Consulta
+POST	/api/banco/clientes	Crea un nuevo cliente en el sistema.	Creación
+GET	/api/banco/clientes/{customerId}/cuentas	Muestra todas las cuentas asociadas a un cliente específico.	Consulta
+POST	/api/banco/clientes/{customerId}/cuentas	Crea una nueva cuenta para el cliente indicado.	Creación
+POST	/api/banco/cuentas/{fromAccountId}/transferencia	Realiza una transferencia desde una cuenta a otra.	Operación
+POST	/api/banco/cuentas/{accountId}/retirar	Retira dinero de una cuenta.	Operación
+POST	/api/banco/cuentas/{accountId}/depósito	Deposita dinero en una cuenta.	Operación
+POST	/api/banco/cuentas/{accountId}/aplicar-interés	Aplica interés a una cuenta (por ejemplo, de ahorro).	Operación
+GET	/api/banco/clientes/{customerId}	Obtiene la información de un cliente específico.	Consulta
+GET	/api/banco/cuentas/{accountId}	Obtiene la información de una cuenta específica.	Consulta
+GET	/api/banco/cuentas/{accountId}/transacciones	Lista todas las transacciones de una cuenta.	Consulta
+
+**En resumen, este panel me sirve para entender cómo funciona la API del banco y probar todas sus funcionalidades sin tener que usar otra herramienta externa. Aquí puedo crear clientes, abrir cuentas, hacer depósitos, retiros, transferencias o consultar transacciones, todo desde un solo lugar.**
 
 como se mensiono anteriormente en esta parte podemos ingresar un cliente por medio de POST y tambien podemos traer informacion o buscar con GET
 <img width="1327" height="596" alt="image" src="https://github.com/user-attachments/assets/14658b42-c774-477b-9203-0a6a08bce3b0" />
